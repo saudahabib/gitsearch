@@ -9,9 +9,11 @@ export class GithubRequestService {
   user : User;
   reponame : Repository;
   constructor(private http: HttpClient) {
-    this.user = new User ("");
+    this.user = new User ("kirandash");
     this.reponame = new Repository("", "");
+    console.log(this.user.username)
    }
+
 
    apiRequest() {
      interface ApiResponse{
@@ -21,14 +23,14 @@ export class GithubRequestService {
 
      }
      let promise = new Promise ((resolve,reject)=>{
-       this.http.get<ApiResponse>(environment.apiUrl).toPromise().then(response=>{
+       this.http.get<ApiResponse>("https://api.github.com/users/" +  this.user.username +environment.apiKey).toPromise().then(response=>{
          this.user.username = response.login
          this.reponame.reponame = response.public_repos
          this.reponame.avatar = response.avatar_url
 
 
          resolve()
-         console.log(this.user.username)
+
        }, error =>{
          this.user.username = "No such Username"
          this.reponame.reponame = "No such Repository"

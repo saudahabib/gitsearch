@@ -22,6 +22,8 @@ reponame: Repository;
   ngOnInit() {
     this.githubService.apiRequest()
     this.user = this.githubService.user
+    this.reponame = this.githubService.reponame
+
   }
 
 }

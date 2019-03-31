@@ -10,14 +10,15 @@ export class GithubRequestService {
   reponame : Repository;
   constructor(private http: HttpClient) {
     this.user = new User ("");
-    this.reponame = new Repository("","");
+    this.reponame = new Repository("", "");
    }
 
    apiRequest() {
      interface ApiResponse{
        login: string;
        public_repos: string;
-       avatar_url: any;
+       avatar_url : any;
+
      }
      let promise = new Promise ((resolve,reject)=>{
        this.http.get<ApiResponse>(environment.apiUrl).toPromise().then(response=>{
@@ -25,12 +26,14 @@ export class GithubRequestService {
          this.reponame.reponame = response.public_repos
          this.reponame.avatar = response.avatar_url
 
+
          resolve()
-         console.log(response)
+         console.log(this.user.username)
        }, error =>{
          this.user.username = "No such Username"
          this.reponame.reponame = "No such Repository"
-         this.reponame.avatar = "No avatar"
+         this.reponame.avatar = "Can't load image"
+
 
          reject(error)
        }

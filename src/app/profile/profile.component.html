@@ -1,53 +1,73 @@
-<br><br><div class="container-fluid">
-  <div class="row">
-    <div class="col-md-4">
-      <form>
-        <input type="text"  name="username" placeholder="Search username" id="search" [(ngModel)]= "username" (keyup)="findProfile()"><br><br><br>
 
-        <br><br><br><br>
-      </form>
-    </div>
-
-
-    <div class="col-md-4">
-        <button id ="reset" class="btn btn-dark" type="reset" name="button">Reset</button>
-    </div>
-
-
-    <div class="col-md-4">
-
-    </div>
-  </div>
-</div>
-
-
-<div class="container-fluid">
-  <div class="results">
+<link href="https://fonts.googleapis.com/css?family=Barlow|Courgette" rel="stylesheet">
+<br><br>
+<div id="main">
+  <div class="container">
     <div class="row">
-        <div class="col-sm-4">
-         <h1 id="title">Search results</h1>
-         <img src={{reponame.avatar}} class="img-fluid rounded-circle" alt="prof"><br><br>
-         <span class="btn btn-warning"> Username : <b>{{user.username}}</b></span><br><br>
-         <span class="btn btn-info">{{reponame.followers}} followers</span><br><br>
-         <span class="btn btn-info">{{reponame.following}} following</span><br><br>
-         <span class="btn btn-info">{{reponame.reponame}} public repositories</span><br><br>
-         <p><a href="{{reponame.html_url}}" class="btn btn-success" target="_blank">View Github Profile</a></p>
-        </div>
+      <div class="col-md-4">
+
+      </div>
 
 
-        <div class="col-sm-8">
-           <div class="panel panel-default">
-             <div class="panel-heading">
-               <h2 class="panel-title">View Repositories Below</h2>
+      <div class="col-md-4">
+        <form>
+          <input type="text"  name="username" placeholder="Search username" id="search" [(ngModel)]= "username" (keyup)="findProfile()"><br><br><br>
+          <button id ="reset" class="btn btn-dark" type="reset" name="button">Reset Search Value</button>
+          <br><br><br><br>
+        </form>
+      </div>
+
+
+      <div class="col-md-4">
+
+      </div>
+    </div>
+  </div>
+ <hr><hr>
+
+  <div class="container-fluid">
+    <div class="results">
+      <div class="row" >
+          <div class="col-sm-4">
+           <!-- <h1 id="title">Search results</h1> -->
+           <img src={{reponame.avatar}} class="img-fluid rounded-circle" alt="prof"><br><br>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-title">
+                  <h1>User Info</h1>
+              </div>
+              <div class="card-body">
+
+                <span class="btn btn-warning"> Username : <b>{{user.username}}</b></span><br><br>
+                <span class="btn btn-info">{{reponame.followers}} followers</span><br><br>
+                <span class="btn btn-info">{{reponame.following}} following</span><br><br>
+                <span class="btn btn-info">{{reponame.reponame}} public repositories</span><br><br>
+                <p><a href="{{reponame.html_url}}" class="btn btn-success" target="_blank">View Github Profile</a></p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-sm-4">
+             <div class="card">
+               <div class="card-title">
+                 <h1>View Repositories Below</h1>
+               </div>
+               <div class="card-body">
+                 <div  *ngFor= "let repo of reponame.repos| slice:0:10">
+                  <p *ngIf="repo.language" class="list-group-item"><a  class="btn btn-dark" href = {{repo.html_url}} target="_blank" id="repos">{{repo.name}}</a> : {{repo.language}}</p>
+                 </div>
+               </div>
+
+
              </div>
-             <div class="panel-body" *ngFor= "let repo of reponame.repos| slice:1:11">
-              <p *ngIf="repo.language"><a  class="btn btn-dark" href = {{repo.html_url}} target="_blank" id="repos">{{repo.name}}</a> : {{repo.language}}</p>
-             </div>
-
-           </div>
-        </div>
+          </div>
+      </div>
     </div>
   </div>
 </div>
+
 
 <!-- <img src={{reponame.avatar}} alt=""> -->

@@ -1,16 +1,16 @@
 <br><br><div class="container-fluid">
   <div class="row">
     <div class="col-md-4">
+      <form>
+        <input type="text"  name="username" placeholder="Search username" id="search" [(ngModel)]= "username" (keyup)="findProfile()"><br><br><br>
 
+        <br><br><br><br>
+      </form>
     </div>
 
 
     <div class="col-md-4">
-      <form>
-        <input type="text"  name="username" placeholder="Search username" id="search" [(ngModel)]= "username" (keyup)="findProfile()"><br><br><br>
         <button id ="reset" class="btn btn-dark" type="reset" name="button">Reset</button>
-        <br><br><br><br>
-      </form>
     </div>
 
 
@@ -26,21 +26,21 @@
     <div class="row">
         <div class="col-sm-4">
          <h1 id="title">Search results</h1>
-         <img src={{reponame.avatar}} class="img-fluid rounded-circle" alt="prof">
+         <img src={{reponame.avatar}} class="img-fluid rounded-circle" alt="prof"><br><br>
+         <span class="btn btn-warning"> Username : <b>{{user.username}}</b></span><br><br>
+         <span class="btn btn-info">{{reponame.followers}} followers</span><br><br>
+         <span class="btn btn-info">{{reponame.following}} following</span><br><br>
+         <span class="btn btn-info">{{reponame.reponame}} public repositories</span><br><br>
+         <p><a href="{{reponame.html_url}}" class="btn btn-success" target="_blank">View Github Profile</a></p>
         </div>
-        <div class="col-sm-4">
-          <p class="btn btn-warning"> Username : <b>{{user.username}}</b></p><br>
-          <span class="btn btn-info">{{reponame.followers}} followers</span><br><br>
-          <span class="btn btn-info">{{reponame.following}} following</span><br><br>
-          <span class="btn btn-info">{{reponame.reponame}} public repositories</span><br><br>
-          <p><a href="{{reponame.html_url}}" class="btn btn-success" target="_blank">View Github Profile</a></p>
-        </div>
-        <div class="col-sm-4">
+
+
+        <div class="col-sm-8">
            <div class="panel panel-default">
              <div class="panel-heading">
                <h2 class="panel-title">View Repositories Below</h2>
              </div>
-             <div class="panel-body" *ngFor= "let repo of reponame.repos; let i=index">
+             <div class="panel-body" *ngFor= "let repo of reponame.repos| slice:1:11">
               <p *ngIf="repo.language"><a  class="btn btn-dark" href = {{repo.html_url}} target="_blank" id="repos">{{repo.name}}</a> : {{repo.language}}</p>
              </div>
 

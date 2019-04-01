@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<br><br><div class="container-fluid">
   <div class="row">
     <div class="col-md-4">
 
@@ -7,7 +7,8 @@
 
     <div class="col-md-4">
       <form>
-        <input type="text"  name="username" placeholder="Search name or repository" id="search" [(ngModel)]= "username" (keyup)="findProfile()">
+        <input type="text"  name="username" placeholder="Search username" id="search" [(ngModel)]= "username" (keyup)="findProfile()"><br><br><br>
+        <button id ="reset" class="btn btn-dark" type="reset" name="button">Reset</button>
         <br><br><br><br>
       </form>
     </div>
@@ -39,7 +40,7 @@
              <div class="panel-heading">
                <h2 class="panel-title">View Repositories Below</h2>
              </div>
-             <div class="panel-body" *ngFor= "let repo of reponame.repos">
+             <div class="panel-body" *ngFor= "let repo of reponame.repos; let i=index">
               <p *ngIf="repo.language"><a  class="btn btn-dark" href = {{repo.html_url}} target="_blank" id="repos">{{repo.name}}</a> : {{repo.language}}</p>
              </div>
 

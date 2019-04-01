@@ -6,19 +6,23 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { ProfileComponent } from './profile/profile.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { AboutComponent } from './about/about.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ProfileComponent
+    ProfileComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers : [GithubRequestService],
   bootstrap: [AppComponent]

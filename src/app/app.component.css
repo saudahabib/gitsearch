@@ -1,0 +1,28 @@
+.home{
+  background-image: url('https://cdn.dribbble.com/users/45010/screenshots/1992789/search_3.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
+  font-family: 'Abril Fatface', cursive;
+  height: 100%;
+  margin-top: 5%;
+}
+
+.home p, .home h3{
+  text-align: center;
+  font-size: 2em;
+  color: white;
+}
+
+.home p {
+font-size: 3em;
+}
+
+#arrow {
+margin-left: 40%;
+}
+.buttons {
+ text-decoration: none;
+ color: black;
+ border-radius: 12%;
+}

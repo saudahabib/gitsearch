@@ -1,0 +1,40 @@
+<br><br><br>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-4">
+
+      </div>
+      <div class="col-sm-4">
+        <form>
+          <input type="text"  name="repository" placeholder="Repository name" [(ngModel)]="repository"><br><br><br>
+          <input type="text" name="" value="" placeholder="User name" [(ngModel)]="username"><br><br>
+          <button type="button" name="button" (click)= "findRepo()">Search</button><br><br>
+          <button id ="reset" class="btn btn-dark" type="reset" name="button">Reset</button>
+          <br><br><br><br>
+        </form>
+      </div>
+      <div class="col-sm-4">
+
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-4">
+
+      </div>
+      <div class="col-sm-4">
+        <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Repository Title</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Repository Description</h6>
+      <p class="card-text">A brief description of the repo. And the language</p>
+      <a href="#" class="card-link">View repo on github</a>
+    </div>
+  </div>
+      </div>
+      <div class="col-sm-4">
+
+      </div>
+    </div>
+  </div>

@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AboutComponent } from './about/about.component';
+import { BackgroundDirective } from './background.directive';
 
 
 
@@ -17,6 +18,7 @@ import { AboutComponent } from './about/about.component';
     HeaderComponent,
     ProfileComponent,
     AboutComponent,
+    BackgroundDirective,
   ],
   imports: [
     BrowserModule,

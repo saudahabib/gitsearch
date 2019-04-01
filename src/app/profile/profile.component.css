@@ -1,0 +1,22 @@
+#search {
+  font-size: xx-large;
+  border-radius: 20px;
+
+}
+#btn {
+font-size: xx-large;
+}
+
+.results {
+ border: 2px solid black;
+ background-color: black;
+ color: white;
+}
+#title {
+  text-align: center;
+}
+
+#repos {
+  color: #ed5769;
+  text-decoration: none;
+}

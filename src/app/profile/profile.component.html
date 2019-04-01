@@ -1,15 +1,50 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-4">
-      <h1>Developer Profile</h1>
-      <div class="card" style= "width:27rem;">
-        <img src={{reponame.avatar}} class="img-fluid rounded-circle" alt="prof">
-        <p> Github Username : {{user.username}}</p>
-        <p>Public Repos : {{reponame.reponame}}</p>
-      </div>
+    <div class="col-md-4">
+
     </div>
-    <div class="col-sm-8">
-      <h1>Search results</h1>
+
+
+    <div class="col-md-4">
+      <form>
+        <input type="text"  name="username" placeholder="Search name or repository" id="search" [(ngModel)]= "username" (keyup)="findProfile()">
+        <br><br><br><br>
+      </form>
+    </div>
+
+
+    <div class="col-md-4">
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+  <div class="results">
+    <div class="row">
+        <div class="col-sm-4">
+         <h1 id="title">Search results</h1>
+         <img src={{reponame.avatar}} class="img-fluid rounded-circle" alt="prof">
+        </div>
+        <div class="col-sm-4">
+          <p class="btn btn-warning"> Username : <b>{{user.username}}</b></p><br>
+          <span class="btn btn-info">{{reponame.followers}} followers</span><br><br>
+          <span class="btn btn-info">{{reponame.following}} following</span><br><br>
+          <span class="btn btn-info">{{reponame.reponame}} public repositories</span><br><br>
+          <p><a href="{{reponame.html_url}}" class="btn btn-success" target="_blank">View Github Profile</a></p>
+        </div>
+        <div class="col-sm-4">
+           <div class="panel panel-default">
+             <div class="panel-heading">
+               <h2 class="panel-title">View Repositories Below</h2>
+             </div>
+             <div class="panel-body" *ngFor= "let repo of reponame.repos">
+              <p *ngIf="repo.language"><a  class="btn btn-dark" href = {{repo.html_url}} target="_blank" id="repos">{{repo.name}}</a> : {{repo.language}}</p>
+             </div>
+
+           </div>
+        </div>
     </div>
   </div>
 </div>

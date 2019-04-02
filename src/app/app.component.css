@@ -25,4 +25,8 @@ margin-left: 40%;
  text-decoration: none;
  color: black;
 
+
+}
+.button1:hover, .button2:hover {
+  font-family: 'Abril Fatface',cursive;
 }

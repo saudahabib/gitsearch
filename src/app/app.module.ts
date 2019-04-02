@@ -9,6 +9,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AboutComponent } from './about/about.component';
 import { BackgroundDirective } from './background.directive';
+import { TimeCountPipe } from './time-count.pipe';
 
 
 
@@ -19,6 +20,7 @@ import { BackgroundDirective } from './background.directive';
     ProfileComponent,
     AboutComponent,
     BackgroundDirective,
+    TimeCountPipe,
   ],
   imports: [
     BrowserModule,

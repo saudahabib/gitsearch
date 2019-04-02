@@ -23,6 +23,10 @@ font-size: xx-large;
 display: flex;
 justify-content: center
 }
+#reset:hover {
+  font-family: 'Abril Fatface', cursive;
+  font-size: x-large;
+}
 #main {
 border : 2px solid black;
 font-family: 'Courgette',cursive;

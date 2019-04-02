@@ -44,4 +44,8 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+<<<<<<< HEAD
 /src/environments/
+=======
+/src/environments
+>>>>>>> a5ced187dbc2951dcf94bd5a06560cb517b7f5d7

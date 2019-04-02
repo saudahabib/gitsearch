@@ -27,3 +27,6 @@ justify-content: center
 border : 2px solid black;
 font-family: 'Courgette',cursive;
 }
+#u-info, #u-avatar, #u-repos{
+  padding-top: 10%;
+}

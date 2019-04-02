@@ -12,7 +12,7 @@
       <div class="col-md-4">
         <form>
           <input type="text"  name="username" placeholder="Search username" id="search" [(ngModel)]= "username" (keyup)="findProfile()"><br><br><br>
-          <button id ="reset" class="btn btn-dark" type="reset" name="button">Reset Search Value</button>
+          <button id ="reset" class="btn btn-dark btn-lg" type="reset" name="button">Reset Search Value</button>
           <br><br><br><br>
         </form>
       </div>
@@ -28,12 +28,12 @@
   <div class="container-fluid">
     <div  appBackground class="results">
       <div class="row" >
-          <div class="col-sm-4">
+          <div class="col-sm-4" id="u-avatar">
            <!-- <h1 id="title">Search results</h1> -->
            <img src={{reponame.avatar}} class="img-fluid rounded-circle" alt="prof"><br><br>
           </div>
 
-          <div class="col-sm-4">
+          <div class="col-sm-4" id="u-info">
             <div class="card">
               <div class="card-title">
                   <h1>User Info</h1>
@@ -50,7 +50,7 @@
 
           </div>
 
-          <div class="col-sm-4">
+          <div class="col-sm-4" id="u-repos">
              <div class="card">
                <div class="card-title">
                  <h1>View Repositories Below</h1>
